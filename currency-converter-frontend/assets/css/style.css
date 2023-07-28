@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-bg-color: #f3f4f6;
+    --secondary-bg-color: #ffffff;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    background-color: var(--secondary-bg-color);
+    padding: 20px 0;
+    width: 570px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+main {
+    padding: 20px 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.amount-field label {
+    display: block;
+    font-weight: 400;
+}
+
+.amount-field input {
+    display: block;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: end;
+    height: 3rem;
+    border-radius: 5px;
+    /* margin: 10px 0; */
+    padding: 0 15px;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.dropdown-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    /* Adjust the gap between the two divs as needed */
+}
+
+/* Optionally, you can add styles to the labels and selects as needed */
+label {
+    font-weight: bold;
+}
+
+select {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.btn-field {
+    text-align: center;
+    /* margin-top: 20px; */
+}
+
+button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #000;
+    color: #f0f0f0;
+}
+
+.output {
+    font-size: 1.2em;
+    text-align: center;
+    color: #02002c;
+    background-color: #dedede;
+    padding: 0.8em 0;
+}
