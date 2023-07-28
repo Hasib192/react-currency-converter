@@ -27,7 +27,7 @@ body {
 
 .app {
     background-color: var(--secondary-bg-color);
-    padding: 20px 0;
+    padding: 60px 20px;
     width: 570px;
     border-radius: 25px;
     display: flex;
