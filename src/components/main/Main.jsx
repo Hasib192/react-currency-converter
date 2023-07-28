@@ -51,12 +51,19 @@ const Main = () => {
     setAmount(value > 0 ? value : 1);
   };
 
+  const handleKeyPress = (event) => {
+    // Prevent typing the negative sign ("-/+") character
+    if (event.key === "-" || event.key === "+") {
+      event.preventDefault();
+    }
+  };
+
   return (
     <main>
       <div className="amount-field">
-        <FormControl fullWidth>
+        <FormControl fullWidth="true">
           <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-          <OutlinedInput id="outlined-adornment-amount" startAdornment={<InputAdornment position="start">{/*$*/}</InputAdornment>} label="Amount" defaultValue={amount} onChange={handleAmountChange} />
+          <OutlinedInput id="outlined-adornment-amount" startAdornment={<InputAdornment position="start">{/*$*/}</InputAdornment>} label="Amount" defaultValue={amount} type="number" inputProps={{ min: 0 }} onKeyPress={handleKeyPress} onChange={handleAmountChange} />
         </FormControl>
       </div>
       <div className="dropdown-field">
