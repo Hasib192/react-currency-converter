@@ -1,5 +1,12 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import * as React from "react";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 const Main = () => {
   const [currencyRates, setCurrencyRates] = useState([]);
@@ -47,29 +54,35 @@ const Main = () => {
   return (
     <main>
       <div className="amount-field">
-        <label>Amount</label>
-        <input type="number" Value={amount} min={1} onChange={handleAmountChange} />
+        <FormControl fullWidth>
+          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+          <OutlinedInput id="outlined-adornment-amount" startAdornment={<InputAdornment position="start">{/*$*/}</InputAdornment>} label="Amount" defaultValue={amount} onChange={handleAmountChange} />
+        </FormControl>
       </div>
       <div className="dropdown-field">
         <div className="from-dropdown-field">
-          <label>From</label>
-          <select value={currencyFrom} onChange={(e) => setCurrencyFrom(e.target.value)}>
-            {Object.keys(currencyRates).map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
+          <FormControl size="small" fullWidth="true">
+            <InputLabel id="demo-select-small-label">From</InputLabel>
+            <Select labelId="demo-select-small-label" id="demo-select-small" value={currencyFrom} label="From" onChange={(e) => setCurrencyFrom(e.target.value)}>
+              {Object.keys(currencyRates).map((currency) => (
+                <MenuItem value={currency} key={currency}>
+                  {currency}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </div>
         <div className="to-dropdown-filed">
-          <label>To</label>
-          <select value={currencyTo} onChange={(e) => setCurrencyTo(e.target.value)}>
-            {Object.keys(currencyRates).map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
+          <FormControl size="small" fullWidth="true">
+            <InputLabel id="demo-select-small-label">To</InputLabel>
+            <Select labelId="demo-select-small-label" id="demo-select-small" value={currencyTo} label="To" onChange={(e) => setCurrencyTo(e.target.value)}>
+              {Object.keys(currencyRates).map((currency) => (
+                <MenuItem value={currency} key={currency}>
+                  {currency}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </div>
       </div>
       <div className="output-filed">
