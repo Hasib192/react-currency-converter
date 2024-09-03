@@ -7,7 +7,7 @@ This is a simple React project to learn React. With this project I have learnt a
 Clone the repository to your local machine.
 
 ```
-https://github.com/Hasib192/react-currency-converter.git
+git clone https://github.com/Hasib192/react-currency-converter.git
 ```
 
 Navigate to the project directory.
